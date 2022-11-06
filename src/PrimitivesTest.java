@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+
 class PrimitivesTest {
 
 	@Test
@@ -82,14 +83,30 @@ class PrimitivesTest {
 	@Test
 	void digitsNumberTest() {
 		//TODO
+		assertEquals(1, BitOperations.onesInNumber(1L));
+		assertEquals(63, BitOperations.onesInNumber(Long.MAX_VALUE));
+		assertEquals(64, BitOperations.onesInNumber(-1L));
+		assertEquals(1, BitOperations.onesInNumber(8L));
+		assertEquals(2, BitOperations.onesInNumber(3L));
 	}
 	@Test
 	void leadingZerosTest() {
-		//TODO
+		assertEquals(1, BitOperations.leadingZeros(Long.MAX_VALUE));
+		assertEquals(63, BitOperations.leadingZeros(1L));
+		assertEquals(0, BitOperations.leadingZeros(-1L));
+		assertEquals(60, BitOperations.leadingZeros(8L));		
 	}
 	 @Test
 	 void isHappyNumberTest() {
 		 //TODO
+		 assertTrue(Numbers.isHappyNumber(111111));
+		 assertTrue(Numbers.isHappyNumber(101011));
+		 assertTrue(Numbers.isHappyNumber(123123));
+		 assertTrue(Numbers.isHappyNumber(123321));
+		 assertTrue(Numbers.isHappyNumber(123312));
+		 assertFalse(Numbers.isHappyNumber(11111));
+		 assertFalse(Numbers.isHappyNumber(1111110));
+		 assertFalse(Numbers.isHappyNumber(111110));		 
 	 }
 
 }

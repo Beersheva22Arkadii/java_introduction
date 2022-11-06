@@ -74,6 +74,6 @@ private static long getMask(int nBit) {
 				res++;
 			}
 		}
-		return res;
+		return res; 
 	}
 }	
