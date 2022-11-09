@@ -109,4 +109,19 @@ class PrimitivesTest {
 		 assertFalse(Numbers.isHappyNumber(111110));		 
 	 }
 
+	@Test
+	@Disabled
+	void getDigitsTest() {
+		int[] expected = {1, 2, 3, 4};
+		assertArrayEquals(expected, Numbers.getDigits(1234));
+	}
+	@Test
+	void getNumberFromDigitsTest() {
+		int expectedNumber = 1234;
+
+		assertEquals(expectedNumber, Numbers.getNumberFromDigits(new int[]{1, 2, 3, 4}));
+	}
+
+
+
 }
