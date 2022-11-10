@@ -1,5 +1,9 @@
 public class IsraelIdentity {
 
+    public static void main(String[] args) {
+        System.out.println("Test generate:" + generateRandomId());
+    }
+
     public static boolean verify(int id) {
         //TODO
         /**
