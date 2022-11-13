@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.Random;
+
 
 public class MyArrays {
     /**
@@ -59,4 +61,79 @@ public class MyArrays {
         newArray[index] = number;
         return newArray;
     }
+
+    public static int binarySearch(int arraySorted[], int number) {
+
+        int left = 0;
+        int right = arraySorted.length - 1;
+        int middle = right / 2;
+
+        while (left <= right && arraySorted[middle] != number) {
+            if (number < arraySorted[middle]) {
+                right = middle - 1;
+            } else {
+                left = middle + 1;
+            }
+            middle = (left + right) / 2;
+        }
+        if (left > right) return -left;
+        else
+            while (middle >= 0 && arraySorted[middle] == number) {
+                middle--;
+            }
+        return middle + 1;
+    }
+
+    public static int[] bubbleSort(int array[]) {
+
+        int arr[] = new int[array.length];
+        System.arraycopy(array, 0, arr, 0, array.length);
+
+
+        boolean swappedSomething = true;
+
+        while (swappedSomething) {
+            swappedSomething = false;
+            int index = arr.length - 1;
+            for (int i = 0; i < index; i++) {
+
+                if (arr[i] > arr[i + 1]) {
+                    swappedSomething = true;
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+
+                }
+            }
+
+        }
+        return arr;
+
+
+    }
+
+    public static boolean isOneSwapForSorted(int unsortedArr[]) {
+        int arraySorted[] = new int[unsortedArr.length];
+        System.arraycopy(unsortedArr, 0, arraySorted, 0, unsortedArr.length);
+
+        Arrays.sort(arraySorted);
+        int count = 0;
+        for (int i = 0; i < unsortedArr.length; i++) {
+            if (arraySorted[i] != unsortedArr[i]) {
+                count++;
+            }
+        }
+
+
+        return count == 2 ? true : false;
+    }
+
+
 }
+
+
+
+
+
+
+

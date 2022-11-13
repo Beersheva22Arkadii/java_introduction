@@ -2,6 +2,7 @@ public class IsraelIdentity {
 
     public static void main(String[] args) {
         System.out.println("Test generate:" + generateRandomId());
+        System.out.println("Test generate2:" + generateRandomId());
     }
 
     public static boolean verify(int id) {
