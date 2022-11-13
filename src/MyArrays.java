@@ -92,9 +92,11 @@ public class MyArrays {
 
         boolean swappedSomething = true;
 
+        int index = array.length-1;
+
         while (swappedSomething) {
             swappedSomething = false;
-            int index = arr.length - 1;
+
             for (int i = 0; i < index; i++) {
 
                 if (arr[i] > arr[i + 1]) {
@@ -104,7 +106,7 @@ public class MyArrays {
                     arr[i + 1] = temp;
 
                 }
-            }
+            } index--;
 
         }
         return arr;
