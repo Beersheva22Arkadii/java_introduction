@@ -92,7 +92,7 @@ public class MyArrays {
 
         boolean swappedSomething = true;
 
-        int index = array.length-1;
+        int index = array.length - 1;
 
         while (swappedSomething) {
             swappedSomething = false;
@@ -106,7 +106,8 @@ public class MyArrays {
                     arr[i + 1] = temp;
 
                 }
-            } index--;
+            }
+            index--;
 
         }
         return arr;
@@ -128,6 +129,35 @@ public class MyArrays {
 
 
         return count == 2 ? true : false;
+    }
+
+    /**
+     * @param array of short positive numbers
+     * @param sum
+     * @return true if array contains two numbers, sum of which equals a given sum
+     */
+
+    // [4, 7, 3, 2, 5, 8, 20, 10]
+    //9
+    //sum - number
+    // array[i]+array[j]=sum
+    //arr[j]=num - arr[i]
+    // arr[j]=1010-10
+    static public boolean isSum2(short array[], short sum) {
+        boolean memory[] = new boolean[Short.MAX_VALUE];
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] <= sum) {
+
+                int diff = sum - array[i];
+                if (memory[diff]) {
+                    return true;
+                }
+                memory[array[i]] = true;
+
+            }
+        }
+        return false;
     }
 
 
