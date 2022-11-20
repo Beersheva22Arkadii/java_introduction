@@ -32,10 +32,22 @@ public class Strings {
         }return res;
     }
     public static void sortStringNumbers(String[] str) {
-
-//????
+        int [] warehouse = new int[256];
+        for (int i=0; i<str.length; i++){
+            warehouse[Byte.valueOf(str[i])+128]++;
+        }
+        int strPos = 0;
+        for (int i=0; i< warehouse.length; i++){
+            while(warehouse[i] !=0){
+                str[strPos]=Integer.toString(i-128);
+                strPos++;
+                warehouse[i]--;
+            }
+        }
     }
 }
+
+
 
 
 
