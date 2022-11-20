@@ -121,6 +121,37 @@ class PrimitivesTest {
 
 		assertEquals(expectedNumber, Numbers.getNumberFromDigits(new int[]{1, 2, 3, 4}));
 	}
+	@Test
+	void isSum2Test() {
+
+
+
+		assertTrue(MyArrays.isSum2(new short[]{1,2,3,4}, (short) 5));
+		assertFalse(MyArrays.isSum2(new short[]{1,2,3,4}, (short) 8));
+	}
+	@Test
+	void isSum3Test() {
+
+		int expect = 1;
+
+		assertEquals(expect, MyArrays.isSum3(new short[]{1,2,3,4,8,5}, (short) 4));
+
+	}
+	@Test
+	void isAnagramTest() {
+
+		String word = "yellow";
+		assertFalse(MyTests.isAnagram(word,("gellow")));
+		assertFalse(MyTests.isAnagram(word,("eyllh")));
+		assertFalse(MyTests.isAnagram(word,("eylloww")));
+		assertTrue(MyTests.isAnagram(word,("eyowll")));
+		assertTrue(MyTests.isAnagram(word,("ellowy")));
+		assertTrue(MyTests.isAnagram(word,("eyllow")));
+		assertTrue(MyTests.isAnagram(word,("yellow")));
+	}
+
+
+
 
 
 

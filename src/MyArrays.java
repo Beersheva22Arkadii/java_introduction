@@ -145,19 +145,34 @@ public class MyArrays {
     // arr[j]=1010-10
     static public boolean isSum2(short array[], short sum) {
         boolean memory[] = new boolean[Short.MAX_VALUE];
+            for (int i = 0; i< array.length; i++){
+                if(array[i]<=sum){
+                    int diff = sum - array[i];
+                    if(memory[diff]){
+                        return true;
+                    } memory[array[i]] = true;
+                }
+            }
 
+        return false;
+    }
+
+    static public int isSum3(short array[], short sum) {
+        boolean memory[] = new boolean[Short.MAX_VALUE];
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] <= sum) {
 
                 int diff = sum - array[i];
+
                 if (memory[diff]) {
-                    return true;
+                    count++;
                 }
                 memory[array[i]] = true;
 
             }
         }
-        return false;
+        return count;
     }
 
 

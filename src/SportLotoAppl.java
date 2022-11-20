@@ -20,6 +20,9 @@ public class SportLotoAppl {
 			store = BitOperations.setBitValue(store, d, true);
 			System.out.println(d + " ");
 		}
+
+
+
 	}
 	
 	public static int getRandomInt(int min, int max) {
